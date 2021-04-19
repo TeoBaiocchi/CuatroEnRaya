@@ -25,14 +25,18 @@ def soltarFichaEnTablero(ficha, columna, tablero): #esta funcion la va a llamar 
             return tablero #el return tiene que estar incluido en el if para que tire una sola ficha por llamado a la funcion
             #porque de no ser así, le da down y revisa 6 veces donde no tiene que hacerlo
 
-def dibujarTablero(tablero): #esta funcion solamente va a imprimir el resultado, por lo tanto tengo
-    for x in tablero: # que pasarle solamente el resultado xD
-        print(x) 
+def deteccionError(secuencia):
+    for x in secuencia:
+        if x > 7 or x < 1:
+            print("Se ingreso un numero invalido en la secuencia.")
+            return 2
+    return 1
 
-
-secuencia = [1, 2, 3, 1, 7]
-dibujarTablero( 
-    completarTableroEnOrden(
-        secuencia, tableroVacio() #para completar el tablero le envío el orden de los tiros y la lista de listas
+secuencia = [1, 2, 3, 1, 8]
+error = deteccionError(secuencia)
+if error == 1:
+    dibujarTablero( 
+        completarTableroEnOrden(
+            secuencia, tableroVacio() #para completar el tablero le envío el orden de los tiros y la lista de listas
+        )
     )
-)
