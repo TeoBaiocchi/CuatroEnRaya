@@ -1,3 +1,6 @@
+#NOTA: los comentarios son solamente para poder entender y guiarme con mas facilidad
+#Son para referencia personal
+
 def tableroVacio(): #esto es una lista con 6 listas de 7 elementos, que conforman el tablero
     return[ 
         [0, 0, 0, 0, 0, 0, 0],
