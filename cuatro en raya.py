@@ -23,7 +23,7 @@ def soltarFichaEnTablero(ficha, columna, tablero): #esta funcion la va a llamar 
         if tablero[fila - 1][columna - 1] == 0:
             tablero[fila - 1][columna - 1] = ficha
             return tablero #el return tiene que estar incluido en el if para que tire una sola ficha por llamado a la funcion
-            #porque de no ser así, le da down y revisa 6 veces donde no tiene que hacerlo
+            #porque de no ser así, se embatata* y revisa 6 veces donde no tiene que hacerlo
 
 def deteccionError(secuencia):
     for x in secuencia:
