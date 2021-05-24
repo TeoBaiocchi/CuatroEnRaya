@@ -45,10 +45,13 @@ def completarTableroEnOrden(secuencia, tablero):
             ficha = 1
     return tablero
 
-def dibujarTablero(tablero): #esta funcion solamente va a imprimir el resultado, por lo tanto tengo
-    for x in tablero: # que pasarle solamente el resultado xD
-        print(x)
-    
+def dibujarTablero(tablero):
+    for x in tablero:
+        print("")                  #for anidado que toma cada lista, y despues imprime cada item de cada lista
+        for y in x:    #necesario hacerlo así para que no muestre los corchetes y las comas
+            print(y, end ='')
+            print(" ", end='')
+
 def soltarFichaEnTablero(ficha, columna, tablero): #esta funcion la va a llamar completar tablero en orden
     for fila in range(6, 0, -1): #fila esta siendo declarado, range va de 6 a 0 (no inclusive) bajando de a 1
         if tablero[fila - 1][columna - 1] == 0:
