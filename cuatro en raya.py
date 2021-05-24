@@ -72,7 +72,11 @@ def deteccionError(secuencia):
             return 2
     return 1
 
-secuencia = [1, 2, 3, 1]
+secuencia_texto = input("Ingrese la secuencia de fichas a soltar, \nindicando en orden el numero de columna en el que se soltarán \ny separando con comas: ")
+secuencia = []
+for items in secuencia_texto.split(','): #esto toma una secuencia por consola
+    secuencia.append(int(items)) #separa la secuencia donde encuentra coma y la appendea a un array secuencia
+
 tablero = []
 error = deteccionError(secuencia)
 if error == 1:
