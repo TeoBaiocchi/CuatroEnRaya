@@ -2,7 +2,7 @@
 #Son para referencia personal
 
 def tableroVacio(): #esto es una lista con 6 listas de 7 elementos, que conforman el tablero
-    return[ 
+    return[
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
@@ -47,10 +47,16 @@ def completarTableroEnOrden(secuencia, tablero):
 
 def dibujarTablero(tablero):
     for x in tablero:
-        print("")                  #for anidado que toma cada lista, y despues imprime cada item de cada lista
-        for y in x:    #necesario hacerlo así para que no muestre los corchetes y las comas
-            print(y, end ='')
+        print("|", end='')    #for anidado que toma cada lista, y despues imprime cada item de cada lista
+        for y in x:           #necesario hacerlo así para que no muestre los corchetes y las comas
+            if y == 0:
+                print(" ", end='')
+            else:
+                print(y, end ='')
             print(" ", end='')
+        print("|", end='')
+        print("")   #Los prints le dan la forma.
+    print("----------------")
 
 def soltarFichaEnTablero(ficha, columna, tablero): #esta funcion la va a llamar completar tablero en orden
     for fila in range(6, 0, -1): #fila esta siendo declarado, range va de 6 a 0 (no inclusive) bajando de a 1
