@@ -1,6 +1,8 @@
 #NOTA: los comentarios son solamente para poder entender y guiarme con mas facilidad
 #Son para referencia personal
 
+#NOTA 2: Correr los test con pytest -s para que tome el inicio
+
 def tableroVacio(): #esto es una lista con 6 listas de 7 elementos, que conforman el tablero
     return[
         [0, 0, 0, 0, 0, 0, 0],
@@ -11,7 +13,7 @@ def tableroVacio(): #esto es una lista con 6 listas de 7 elementos, que conforma
         [0, 0, 0, 0, 0, 0, 0], #esta es la 1ra, aunque sea la 6ta de la lista de listas
     ]
 
-def todasFilas(tablero):
+def todasFilas(tablero): 
     orden_filas = []
     for fila in tablero:
         orden_filas.append(fila)
@@ -20,7 +22,7 @@ def todasFilas(tablero):
 
 def todasColumnas(tablero):
     orden_columnas = []
-    for x in range(1, 7):
+    for x in range(1, 8):
         orden_columnas.append(contenidoColumna(x, tablero))
     return orden_columnas
 
@@ -45,7 +47,7 @@ def completarTableroEnOrden(secuencia, tablero):
             ficha = 1
     return tablero
 
-def dibujarTablero(tablero):
+def dibujarTablero(tablero):  
     for x in tablero:
         print("|", end='')    #for anidado que toma cada lista, y despues imprime cada item de cada lista
         for y in x:           #necesario hacerlo así para que no muestre los corchetes y las comas
@@ -68,8 +70,8 @@ def soltarFichaEnTablero(ficha, columna, tablero): #esta funcion la va a llamar 
 def deteccionError(secuencia):
     for x in secuencia:
         if x > 7 or x < 1:
-            print("Se ingreso un numero invalido en la secuencia.")
-            return 2
+            print("Se ingreso un numero invalido en la secuencia.") 
+            return 2 
     return 1
 
 secuencia_texto = input("Ingrese la secuencia de fichas a soltar, \nindicando en orden el numero de columna en el que se soltarán \ny separando con comas: ")
@@ -90,7 +92,8 @@ if error == 1:
     print(orden_columnas)
     print("^Todas columnas^  ///  v Todas filas v")
     orden_filas = todasFilas(tablero)
-    print(orden_filas)
+    print(orden_filas) 
+
 #Esta ultima funcion primero define una secuencia
 #detecta si es correcta, y despues dibuja el tablero
 #para esto lo declara como variable vacia, la llena igualando a completarTableroEnOrden
