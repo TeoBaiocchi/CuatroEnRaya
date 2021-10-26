@@ -1,1 +1,2 @@
-.html linguist-detectable=false
+.pytest_cache/* linguist-vendored=true
+htmlcov/* linguist-vendored=true
